@@ -25,10 +25,10 @@ const RegistrationForm = () => {
       <InputContainer>
         <InputEl placeholder="Login" />
         <InputEl placeholder="Email" />
-
-        <InputEl placeholder="Password">
-          {/* <InfoText>Show</InfoText> */}
-        </InputEl>
+        <LastInput>
+          <InputEl placeholder="Password" />
+          <InfoText>Show</InfoText>
+        </LastInput>
       </InputContainer>
 
       <ButtonSingIn>

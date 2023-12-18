@@ -9,7 +9,6 @@ export default function App() {
   console.log("Hello start");
   return (
     <>
-      <Text>Hello!</Text>
       {/* <View style={styles.container}> */}
       <RegistrationScreen />
       {/* <StatusBar style="auto" /> */}

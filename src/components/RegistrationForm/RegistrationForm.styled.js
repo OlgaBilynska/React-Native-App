@@ -2,7 +2,7 @@ import styled from "@emotion/native";
 
 export const Container = styled.View`
   position: fixed;
-  top: 30%;
+  top: 20%;
   width: 100%;
   padding: 92px 16px 45px 16px;
 `;
@@ -16,16 +16,12 @@ export const FormName = styled.Text`
 `;
 
 export const InputEl = styled.TextInput`
-  display: block;
+  position: relative;
   width: 100%;
   background-color: #f6f6f6;
   border: 1px solid #e8e8e8;
   padding: 16px 0px 15px 16px;
   border-radius: 10px;
-
-  &:last-child {
-    position: relative;
-  }
 `;
 
 export const ButtonSingIn = styled.TouchableOpacity`
@@ -44,7 +40,6 @@ export const InputContainer = styled.View`
 
   &::placeholder {
     font-size: 16px;
-    line-height: 1.17;
     color: #bdbdbd;
   }
 `;
@@ -52,18 +47,19 @@ export const InputContainer = styled.View`
 export const LastInput = styled.View`
   position: relative;
   display: block;
+  width: 100%;
 `;
 
 export const InfoText = styled.Text`
   position: absolute;
-  right: 0px;
+  right: 16px;
+  top: 30%;
   font-size: 16px;
   color: #1b4371;
 `;
 
 export const LoginLink = styled.Text`
   font-size: 16px;
-  line-height: 1.17;
   color: #1b4371;
   text-align: center;
 `;

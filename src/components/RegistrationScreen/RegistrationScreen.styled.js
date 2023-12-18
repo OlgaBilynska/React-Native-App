@@ -1,10 +1,11 @@
 import styled from "@emotion/native";
 
-export const BackgroundContainer = styled.View`
-  background-color: red;
-  background-image: url("../../../assets/backgroundPic.jpg");
-  background-repeat: no-repeat;
-  background-position: contain;
-  object-fit: contain;
-  background-size: 50%;
-`;
+// export const BackgroundContainer = styled.Image`
+//   flex: 1;
+
+//   background-color: red;
+//   background-repeat: no-repeat;
+//   background-position: contain;
+//   object-fit: contain;
+//   background-size: 50%;
+// `;
