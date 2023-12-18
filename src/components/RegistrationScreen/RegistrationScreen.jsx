@@ -1,8 +1,7 @@
 import React from "react";
 import { ImageBackground, View } from "react-native";
 import RegistrationForm from "../RegistrationForm";
-
-const image = { uri: "../../../assets/background.jpg" };
+import image from "../../../assets/background.jpg";
 
 const RegistrationScreen = () => {
   return (

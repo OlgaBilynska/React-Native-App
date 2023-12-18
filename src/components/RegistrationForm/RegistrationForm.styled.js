@@ -1,10 +1,13 @@
 import styled from "@emotion/native";
 
 export const Container = styled.View`
-  position: fixed;
-  top: 20%;
+  position: absolute;
+  bottom: 0px;
   width: 100%;
   padding: 92px 16px 45px 16px;
+  background-color: white;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
 `;
 
 export const FormName = styled.Text`
@@ -68,4 +71,18 @@ export const BtnText = styled.Text`
   font-size: 16px;
   color: #ffffff;
   text-align: center;
+`;
+
+export const ImageWrapper = styled.View`
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-40px);
+  background-color: white;
+  width: 120px;
+  height: 120px;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+  outline: 1px solid red;
+  z-index: 100;
 `;

@@ -6,6 +6,7 @@ import {
   ToastAndroid,
   TouchableOpacity,
 } from "react-native";
+import ImgContainer from "../ImgContainer/ImgContainer";
 import {
   Container,
   FormName,
@@ -16,11 +17,13 @@ import {
   LoginLink,
   BtnText,
   LastInput,
+  ImageWrapper,
 } from "./RegistrationForm.styled";
 
 const RegistrationForm = () => {
   return (
     <Container>
+      <ImageWrapper></ImageWrapper>
       <FormName>Registration</FormName>
       <InputContainer>
         <InputEl placeholder="Login" />
@@ -30,11 +33,9 @@ const RegistrationForm = () => {
           <InfoText>Show</InfoText>
         </LastInput>
       </InputContainer>
-
       <ButtonSingIn>
         <BtnText>Sign In</BtnText>
       </ButtonSingIn>
-
       <LoginLink> Already have an account? Log in.</LoginLink>
     </Container>
   );
