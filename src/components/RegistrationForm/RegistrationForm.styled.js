@@ -1,4 +1,5 @@
 import styled from "@emotion/native";
+// import Icon from "react-native-vector-icons/Feather";
 
 export const Container = styled.View`
   position: absolute;
@@ -25,6 +26,10 @@ export const InputEl = styled.TextInput`
   border: 1px solid #e8e8e8;
   padding: 16px 0px 15px 16px;
   border-radius: 10px;
+
+  /* &:focus {
+    border: #ff6c00;
+  } */
 `;
 
 export const ButtonSingIn = styled.TouchableOpacity`
@@ -78,11 +83,19 @@ export const ImageWrapper = styled.View`
   top: -60px;
   left: 50%;
   transform: translateX(-40px);
-  background-color: white;
+  background-color: #f6f6f6;
   width: 120px;
   height: 120px;
-  border-top-right-radius: 16px;
-  border-top-left-radius: 16px;
-  outline: 1px solid red;
+  border-radius: 16px;
   z-index: 100;
+`;
+
+export const IconWrapper = styled.TouchableOpacity`
+  position: absolute;
+  bottom: 12px;
+  right: -12px;
+  width: 25px;
+  height: 25px;
+  background-color: #f6f6f6;
+  border-radius: 50px;
 `;

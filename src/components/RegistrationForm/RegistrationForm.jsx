@@ -6,7 +6,6 @@ import {
   ToastAndroid,
   TouchableOpacity,
 } from "react-native";
-import ImgContainer from "../ImgContainer/ImgContainer";
 import {
   Container,
   FormName,
@@ -18,18 +17,43 @@ import {
   BtnText,
   LastInput,
   ImageWrapper,
+  PlusIcon,
+  IconWrapper,
 } from "./RegistrationForm.styled";
+import Icon from "react-native-vector-icons/AntDesign";
+import { useState } from "react";
 
 const RegistrationForm = () => {
+  const [text, setText] = useState("");
   return (
     <Container>
-      <ImageWrapper></ImageWrapper>
+      <ImageWrapper>
+        <IconWrapper>
+          <Icon name="pluscircleo" size={25} color="orange" />
+        </IconWrapper>
+      </ImageWrapper>
       <FormName>Registration</FormName>
       <InputContainer>
-        <InputEl placeholder="Login" />
-        <InputEl placeholder="Email" />
+        <InputEl
+          placeholder="Login"
+          name="login"
+          autoFocus
+          value={text}
+          onChangeText={setText}
+        />
+        <InputEl
+          placeholder="Email"
+          name="email"
+          value={text}
+          onChangeText={setText}
+        />
         <LastInput>
-          <InputEl placeholder="Password" />
+          <InputEl
+            placeholder="Password"
+            name="password"
+            value={text}
+            onChangeText={setText}
+          />
           <InfoText>Show</InfoText>
         </LastInput>
       </InputContainer>
@@ -47,6 +71,12 @@ const styles = StyleSheet.create({
     backgroundColor: "orange",
     borderRadius: 100,
     marginBottom: 16,
+  },
+
+  plus: {
+    border: "1px solid black",
+    padding: "10px",
+    fill: "red",
   },
 });
 
