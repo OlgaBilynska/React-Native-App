@@ -1,48 +1,27 @@
-import {
-  Button,
-  StyleSheet,
-  Text,
-  View,
-  ToastAndroid,
-  TouchableOpacity,
-  KeyboardAvoidingView,
-} from "react-native";
+import { Text, View, KeyboardAvoidingView } from "react-native";
+import ImgContainer from "../ImgContainer";
 import {
   Container,
   FormName,
+  InputContainer,
   InputEl,
   ButtonSingIn,
-  InputContainer,
-  InfoText,
-  LoginLink,
   BtnText,
   LastInput,
-} from "./RegistrationForm.styled";
+  InfoText,
+  LoginLink,
+} from "./LoginForm.styled";
 import { useState } from "react";
-import ImgContainer from "../ImgContainer";
 
-const RegistrationForm = () => {
-  const [name, setName] = useState("");
+const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   return (
     <Container>
       <ImgContainer />
-      <FormName>Registration</FormName>
+      <FormName>Login</FormName>
       <InputContainer>
-        <KeyboardAvoidingView
-          behavior={Platform.OS == "ios" ? "padding" : "height"}
-        >
-          <InputEl
-            placeholder="Login"
-            name="login"
-            autoFocus
-            value={name}
-            onChangeText={setName}
-          />
-        </KeyboardAvoidingView>
-
         <KeyboardAvoidingView
           behavior={Platform.OS == "ios" ? "padding" : "height"}
         >
@@ -68,11 +47,11 @@ const RegistrationForm = () => {
         </KeyboardAvoidingView>
       </InputContainer>
       <ButtonSingIn>
-        <BtnText>Sign In</BtnText>
+        <BtnText>Log In</BtnText>
       </ButtonSingIn>
-      <LoginLink> Already have an account? Log in.</LoginLink>
+      <LoginLink> Don't have an account yet? Sign in</LoginLink>
     </Container>
   );
 };
 
-export default RegistrationForm;
+export default LoginForm;
