@@ -19,6 +19,9 @@ import { useState, useEffect } from "react";
 
 const LoginForm = () => {
   const [isShowKeyboard, setIsShowKeyboard] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [focusedInput, setFocusedInput] = useState(null);
 
   useEffect(() => {
     const keyboardDidShowListener = Keyboard.addListener(
@@ -39,8 +42,13 @@ const LoginForm = () => {
     };
   }, []);
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const handleFocus = (inputId) => {
+    setFocusedInput(inputId);
+  };
+
+  const handleBlur = () => {
+    setFocusedInput(null);
+  };
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -48,16 +56,17 @@ const LoginForm = () => {
         <ImgContainer />
         <FormName>Login</FormName>
         <InputContainer>
-          {/* <KeyboardAvoidingView
-          behavior={Platform.OS == "ios" ? "padding" : "height"}
-        > */}
           <InputEl
             placeholder="Email"
             name="email"
             value={email}
             onChangeText={setEmail}
+            type="email"
+            id="1"
+            isFocused={focusedInput === "1"}
+            onFocus={() => handleFocus("1")}
+            onBlur={handleBlur}
           />
-          {/* </KeyboardAvoidingView> */}
           <KeyboardAvoidingView
             behavior={Platform.OS == "ios" ? "padding" : "height"}
           >
@@ -67,6 +76,11 @@ const LoginForm = () => {
                 name="password"
                 value={password}
                 onChangeText={setPassword}
+                type="password"
+                id="2"
+                isFocused={focusedInput === "2"}
+                onFocus={() => handleFocus("2")}
+                onBlur={handleBlur}
               />
               <InfoText>Show</InfoText>
             </LastInput>

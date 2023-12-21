@@ -27,11 +27,18 @@ export const InputEl = styled.TextInput`
   position: relative;
   width: 100%;
   background-color: #f6f6f6;
-  border: 1px solid #e8e8e8;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #e8e8e8;
   padding: 16px 0px 15px 16px;
   border-radius: 10px;
 
-  border-color: ${({ isFocused }) => (isFocused ? "#FF6C00" : "#BDBDBD")};
+  ${(props) =>
+    props.isFocused &&
+    css`
+      border-color: #ff6c00;
+      background-color: #fff;
+    `}
 `;
 
 export const ButtonSingIn = styled.TouchableOpacity`

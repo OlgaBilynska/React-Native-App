@@ -1,4 +1,4 @@
-// import { StatusBar } from "expo-status-bar";
+import { StatusBar } from "expo-status-bar";
 import {
   StyleSheet,
   Text,
@@ -16,7 +16,7 @@ export default function App() {
     <View>
       <RegistrationScreen />
       {/* <LoginScreen /> */}
-      {/* <StatusBar style="auto" /> */}
+      <StatusBar style="auto" />
     </View>
   );
 }

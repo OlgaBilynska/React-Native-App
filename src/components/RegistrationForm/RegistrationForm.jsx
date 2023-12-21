@@ -18,12 +18,11 @@ import { useState, useEffect } from "react";
 import ImgContainer from "../ImgContainer";
 
 const RegistrationForm = () => {
-  // console.log("isFocused", isFocused);
   const [isShowKeyboard, setIsShowKeyboard] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [isFocused, setIsFocused] = useState(false);
+  const [focusedInput, setFocusedInput] = useState(null);
 
   useEffect(() => {
     const keyboardDidShowListener = Keyboard.addListener(
@@ -44,13 +43,13 @@ const RegistrationForm = () => {
     };
   }, []);
 
-  // const handleFocus = () => {
-  //   setIsFocused(true);
-  // };
+  const handleFocus = (inputId) => {
+    setFocusedInput(inputId);
+  };
 
-  // const handleBlur = () => {
-  //   setIsFocused(false);
-  // };
+  const handleBlur = () => {
+    setFocusedInput(null);
+  };
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -58,50 +57,42 @@ const RegistrationForm = () => {
         <ImgContainer />
         <FormName>Registration</FormName>
         <InputContainer>
-          {/* <KeyboardAvoidingView
-            behavior={Platform.OS == "ios" ? "padding" : "height"}
-          > */}
           <InputEl
             placeholder="Login"
             name="login"
-            autoFocus
             value={name}
             onChangeText={setName}
-            // onFocus={handleFocus}
-            // onBlur={handleBlur}
-            // isFocused={isFocused}
+            isFocused={focusedInput === "1"}
+            onFocus={() => handleFocus("1")}
+            onBlur={handleBlur}
+            id="1"
+            type="text"
           />
-          {/* </KeyboardAvoidingView> */}
-
-          {/* <KeyboardAvoidingView
-            behavior={Platform.OS == "ios" ? "padding" : "height"}
-          > */}
           <InputEl
             placeholder="Email"
             name="email"
             value={email}
             onChangeText={setEmail}
-            // onFocus={handleFocus}
-            // onBlur={handleBlur}
-            // isFocused={isFocused}
+            onFocus={() => handleFocus("2")}
+            onBlur={handleBlur}
+            isFocused={focusedInput === "2"}
+            id="2"
+            type="email"
           />
-          {/* </KeyboardAvoidingView> */}
-          {/* <KeyboardAvoidingView
-            behavior={Platform.OS == "ios" ? "padding" : "height"}
-          > */}
           <LastInput>
             <InputEl
               placeholder="Password"
               name="password"
               value={password}
               onChangeText={setPassword}
-              // onFocus={handleFocus}
-              // onBlur={handleBlur}
-              // isFocused={isFocused}
+              isFocused={focusedInput === "3"}
+              onBlur={handleBlur}
+              onFocus={() => handleFocus("3")}
+              id="3"
+              type="password"
             />
             <InfoText>Show</InfoText>
           </LastInput>
-          {/* </KeyboardAvoidingView> */}
         </InputContainer>
         <ButtonSingIn>
           <BtnText>Sign In</BtnText>
