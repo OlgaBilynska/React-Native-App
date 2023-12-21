@@ -17,15 +17,7 @@ const LoginScreen = () => {
         resizeMode="cover"
         style={imageStyle}
       >
-        <KeyboardAvoidingView
-          style={{
-            flex: 1,
-            width: "100%",
-          }}
-          behavior={Platform.OS === "ios" ? "padding" : null}
-        >
-          <LoginForm />
-        </KeyboardAvoidingView>
+        <LoginForm />
       </ImageBackgroundStyled>
     </View>
   );

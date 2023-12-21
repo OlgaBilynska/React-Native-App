@@ -1,13 +1,18 @@
-import styled from "@emotion/native";
+import styled, { css } from "@emotion/native";
 
 export const Container = styled.View`
   position: absolute;
   bottom: 0px;
   width: 100%;
-  padding: 92px 16px 45px 16px;
+  padding-top: 92px;
+  padding-bottom: 45px;
+  padding-left: 16px;
+  padding-right: 16px;
   background-color: white;
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
+  padding-bottom: ${({ isShowKeyboard }) =>
+    isShowKeyboard ? "110px" : "45px"};
 `;
 
 export const FormName = styled.Text`
@@ -25,6 +30,8 @@ export const InputEl = styled.TextInput`
   border: 1px solid #e8e8e8;
   padding: 16px 0px 15px 16px;
   border-radius: 10px;
+
+  border-color: ${({ isFocused }) => (isFocused ? "#FF6C00" : "#BDBDBD")};
 `;
 
 export const ButtonSingIn = styled.TouchableOpacity`
