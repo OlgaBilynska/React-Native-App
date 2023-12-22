@@ -13,9 +13,9 @@ import LoginScreen from "./src/screens/LoginScreen/LoginScreen";
 export default function App() {
   return (
     <View>
-      {/* <RegistrationScreen /> */}
-      <LoginScreen />
-      <StatusBar style="auto" />
+      <RegistrationScreen />
+      {/* <LoginScreen /> */}
+      {/* <StatusBar style="auto" /> */}
     </View>
   );
 }

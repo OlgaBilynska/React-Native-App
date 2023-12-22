@@ -1,4 +1,11 @@
-import { View, Text, Dimensions, KeyboardAvoidingView } from "react-native";
+import {
+  View,
+  Text,
+  Dimensions,
+  KeyboardAvoidingView,
+  TouchableWithoutFeedback,
+  Keyboard,
+} from "react-native";
 import React from "react";
 import LoginForm from "../../components/LoginForm/LoginForm";
 import image from "../../../assets/background.jpg";
@@ -12,13 +19,15 @@ const imageStyle = {
 const LoginScreen = () => {
   return (
     <View style={{ flex: 1 }}>
-      <ImageBackgroundStyled
-        source={image}
-        resizeMode="cover"
-        style={imageStyle}
-      >
-        <LoginForm />
-      </ImageBackgroundStyled>
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <ImageBackgroundStyled
+          source={image}
+          resizeMode="cover"
+          style={imageStyle}
+        >
+          <LoginForm />
+        </ImageBackgroundStyled>
+      </TouchableWithoutFeedback>
     </View>
   );
 };

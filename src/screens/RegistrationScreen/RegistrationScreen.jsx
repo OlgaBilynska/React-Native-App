@@ -5,6 +5,8 @@ import {
   View,
   Dimensions,
   KeyboardAvoidingView,
+  TouchableWithoutFeedback,
+  Keyboard,
 } from "react-native";
 import RegistrationForm from "../../components/RegistrationForm";
 import image from "../../../assets/background.jpg";
@@ -19,14 +21,15 @@ const imageStyle = {
 const RegistrationScreen = () => {
   return (
     <View style={{ flex: 1 }}>
-      <ImageBackgroundStyled
-        source={image}
-        resizeMode="cover"
-        style={imageStyle}
-      >
-        <RegistrationForm />
-      </ImageBackgroundStyled>
-      <RegistrationForm />
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <ImageBackgroundStyled
+          source={image}
+          resizeMode="cover"
+          style={imageStyle}
+        >
+          <RegistrationForm />
+        </ImageBackgroundStyled>
+      </TouchableWithoutFeedback>
     </View>
   );
 };
