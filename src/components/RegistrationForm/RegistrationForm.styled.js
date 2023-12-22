@@ -12,7 +12,7 @@ export const Container = styled.View`
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
   padding-bottom: ${({ isShowKeyboard }) =>
-    isShowKeyboard ? "110px" : "45px"};
+    isShowKeyboard ? "185px" : "45px"};
 `;
 
 export const FormName = styled.Text`

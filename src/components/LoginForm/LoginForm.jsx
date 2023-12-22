@@ -50,6 +50,11 @@ const LoginForm = () => {
     setFocusedInput(null);
   };
 
+  const handleSubmit = (email, password) => {
+    console.log("email", email);
+    console.log("password", password);
+  };
+
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <Container isShowKeyboard={isShowKeyboard}>
@@ -86,7 +91,11 @@ const LoginForm = () => {
             </LastInput>
           </KeyboardAvoidingView>
         </InputContainer>
-        <ButtonSingIn>
+        <ButtonSingIn
+          onPress={() => {
+            handleSubmit(email, password);
+          }}
+        >
           <BtnText>Log In</BtnText>
         </ButtonSingIn>
         <LoginLink> Don't have an account yet? Sign in</LoginLink>

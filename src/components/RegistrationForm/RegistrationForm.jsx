@@ -24,6 +24,12 @@ const RegistrationForm = () => {
   const [password, setPassword] = useState("");
   const [focusedInput, setFocusedInput] = useState(null);
 
+  const handleSubmit = (name, email, password) => {
+    console.log("name", name);
+    console.log("email", email);
+    console.log("password", password);
+  };
+
   useEffect(() => {
     const keyboardDidShowListener = Keyboard.addListener(
       "keyboardDidShow",
@@ -94,7 +100,11 @@ const RegistrationForm = () => {
             <InfoText>Show</InfoText>
           </LastInput>
         </InputContainer>
-        <ButtonSingIn>
+        <ButtonSingIn
+          onPress={() => {
+            handleSubmit(name, email, password);
+          }}
+        >
           <BtnText>Sign In</BtnText>
         </ButtonSingIn>
         <LoginLink> Already have an account? Log in.</LoginLink>
